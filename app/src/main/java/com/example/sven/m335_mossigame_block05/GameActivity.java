@@ -22,12 +22,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     int mosquitosCatched;
     int level;
     int score;
+    private static final int GAMETIME = 60;
 
     TextView txtLevel, txtScore, txtTimeRemaining,
             txtMossisCatched;
 
     Random random;
-    FrameLayout barTime;
+    FrameLayout barTime, barMosquitos;
     ViewGroup gameZone;
     Date tStart;
 
@@ -41,7 +42,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mosquitosCatched = 0;
         level = level+1;
         mosquitos = level * 10;
-        timeRemaining = 60;
+        timeRemaining = GAMETIME;
         tStart = new Date();
         refreshScreen();
         //showMosquito();
@@ -59,6 +60,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         txtMossisCatched = (TextView) findViewById(R.id.textViewCatches);
         txtTimeRemaining = (TextView) findViewById(R.id.textViewTimeLeft);
         barTime = (FrameLayout)findViewById(R.id.bar_time);
+        barMosquitos = (FrameLayout)findViewById(R.id.bar_catches);
         gameZone = (ViewGroup)findViewById(R.id.gameZone);
 
         Button showMossiBtn = (Button) findViewById(R.id.buttonShowMossi);
@@ -79,15 +81,20 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void refreshScreen(){
 
+        int dTime = (int)(new Date().getTime() - tStart.getTime())/1000;
+        timeRemaining = GAMETIME - dTime;
         txtLevel.setText(Integer.toString(level));
         txtScore.setText(Integer.toString(score));
         txtTimeRemaining.setText(Integer.toString(timeRemaining));
         txtMossisCatched.setText(Integer.toString(mosquitosCatched));
 
+        // time bar handling
         ViewGroup.LayoutParams params = barTime.getLayoutParams();
         int fullWidth = gameZone.getMeasuredWidth();
-        int dTime = (int)(new Date().getTime() - tStart.getTime())/1000;
-        params.width = fullWidth / 60 * (60 - dTime);
+        params.width = fullWidth / GAMETIME * (GAMETIME - dTime);
+        // mosquito bar handling
+        params = barMosquitos.getLayoutParams();
+        params.width = fullWidth / mosquitos * mosquitosCatched;
 
     }
 

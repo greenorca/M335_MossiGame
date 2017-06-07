@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="semiTransparentWhite">#55ffffff</color>
     <color name="colorProgress">#6e2020</color>
+    <color name="semiTransparentBlack">#b4040404</color>
 </resources>

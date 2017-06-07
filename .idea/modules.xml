@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/M335_MossiGame.iml" filepath="$PROJECT_DIR$/M335_MossiGame.iml" />
       <module fileurl="file://$PROJECT_DIR$/M335_MossiGame_Block05.iml" filepath="$PROJECT_DIR$/M335_MossiGame_Block05.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

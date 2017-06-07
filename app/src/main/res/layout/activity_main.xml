@@ -12,10 +12,11 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/semiTransparentWhite"
+        android:background="@color/semiTransparentBlack"
         android:padding="8dp"
-        android:text="Welcome to the Mosquito Game! Catch every mosquito by simply tapping it on the screen. "
-        android:textColor="@android:color/holo_red_dark"
+        android:text="@string/intro_txt"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_green_light"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -26,7 +27,7 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
+        android:padding="18dp"
         android:text="Start"
         android:textSize="24sp" />
 

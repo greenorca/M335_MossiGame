@@ -5,4 +5,5 @@
     <string name="score">Score</string>
     <string name="time">Time</string>
     <string name="catches">Catches</string>
+    <string name="intro_txt">Welcome to the Mosquito Game! Catch every mosquito by simply tapping it on the screen.</string>
 </resources>

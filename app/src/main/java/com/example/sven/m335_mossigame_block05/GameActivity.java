@@ -1,6 +1,7 @@
 package com.example.sven.m335_mossigame_block05;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -96,6 +97,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             dialog.show();
             Toast.makeText(this, String.valueOf(mosquitosCreated), Toast.LENGTH_LONG).show();
             isActive = false;
+            //apply return value for the activity
+            setResult(this.score);
             return true;
         }
         return false;
@@ -157,7 +160,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         gameZone = (ViewGroup)findViewById(R.id.gameZone);
         int width = gameZone.getMeasuredWidth();
         int height = gameZone.getMeasuredHeight();
-        Log.d("MOSSI_GAMEACTIVITY", "width:"+width+", height: "+height);
+        //Log.d("MOSSI_GAMEACTIVITY", "width:"+width+", height: "+height);
         int mossiSize = 150;
 
         int distTop = random.nextInt(height-mossiSize);
@@ -210,6 +213,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mossi.setOnClickListener(null);
         //refreshScreen();
     }
+
 
     /**
      * When an object implementing interface <code>Runnable</code> is used
